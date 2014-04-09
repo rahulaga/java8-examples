@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+group = 'com.irahul'
+archivesBaseName = 'java8-examples'
+version = "1.0-SNAPSHOT"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {    
+    testCompile group:'junit', name:'junit', version:'4.+'
+}
