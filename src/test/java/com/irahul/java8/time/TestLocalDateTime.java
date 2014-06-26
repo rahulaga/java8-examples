@@ -94,4 +94,19 @@ public class TestLocalDateTime {
 		LocalDateTime now = LocalDateTime.now();
 		System.out.println(String.format("toString=%s", now.toString()));
 	}
+	
+	@Test
+	public void testEnum(){
+		DayOfWeek mon = DayOfWeek.MONDAY;
+		
+		DayOfWeek future1 = mon.plus(3);
+		Assert.assertEquals(DayOfWeek.THURSDAY, future1);
+		
+		DayOfWeek future2 = mon.plus(8);//rolls over to following week
+		Assert.assertEquals(DayOfWeek.TUESDAY, future2);
+		
+		Month feb = Month.FEBRUARY;
+		Assert.assertEquals(Month.APRIL, feb.plus(2));
+		Assert.assertEquals(Month.MARCH, feb.plus(13));		
+	}
 }
