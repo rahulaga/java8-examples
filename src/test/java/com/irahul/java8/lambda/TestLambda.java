@@ -26,6 +26,11 @@ public class TestLambda {
 		//anonymous
 		predicateMethodCall(n -> n%2 == 0);
 	}
+	
+	@Test
+	public void testMethodReference(){
+		predicateMethodCall(MyPredicates::isEven);
+	}
 
 	private void predicateMethodCall(Predicate<Integer> param) {
 		Assert.assertTrue(param.test(2));
