@@ -5,6 +5,12 @@ import java.util.function.Predicate;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Using classes that are FunctionalInterface
+ * 
+ * @author rahul
+ *
+ */
 public class TestLambda {
 
 	@Test
@@ -24,5 +30,15 @@ public class TestLambda {
 	private void predicateMethodCall(Predicate<Integer> param) {
 		Assert.assertTrue(param.test(2));
 		Assert.assertFalse(param.test(1));		
+	}
+	
+	@Test
+	public void testRunnable(){
+		//named runner
+		Runnable runner = () -> System.out.println("Hello Named World!");
+		new Thread(runner).start();
+		
+		//anonymous
+		new Thread(() -> System.out.println("Hello Anonymous World!")).start();
 	}
 }
